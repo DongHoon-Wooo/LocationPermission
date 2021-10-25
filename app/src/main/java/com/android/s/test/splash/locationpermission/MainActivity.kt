@@ -11,11 +11,13 @@ import android.os.Looper
 import android.util.Log
 import android.view.View
 import android.widget.Button
+import android.widget.TextView
 import com.google.android.gms.location.LocationCallback
 import com.google.android.gms.location.LocationRequest
 import com.google.android.gms.location.LocationResult
 import com.google.android.gms.location.LocationServices
 import com.google.android.material.snackbar.Snackbar
+import org.w3c.dom.Text
 import java.util.concurrent.TimeUnit
 
 class MainActivity : AppCompatActivity() {
@@ -96,6 +98,7 @@ class MainActivity : AppCompatActivity() {
                 super.onLocationResult(locationResult)
                 val currentLocation = locationResult.lastLocation
                 Log.d("====", "==== currentLocation: $currentLocation")
+                findViewById<TextView>(R.id.textView).text = "currentLocation: $currentLocation"
             }
         }
 
